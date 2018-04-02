@@ -69,6 +69,14 @@ namespace accessDbDiff
 
                 // Open the output
                 auxFileWriterLib.createFile(outPath);
+                // Write a header
+                auxFileWriterLib.appendToFile(outPath, "Comparing Files:" + Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, "\t" + accDbPath1 + Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, "\t" + accDbPath2 + Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, "========================================================================" + Environment.NewLine);
+                auxFileWriterLib.appendToFile(outPath, Environment.NewLine);
 
                 for (int i=0; i<ds1.Tables.Count; i++)
                 {
